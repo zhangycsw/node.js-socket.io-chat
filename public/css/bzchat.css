@@ -1,0 +1,992 @@
+html,body{
+  width:100%;
+  height:100%;
+}
+body{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  background-size:contain;
+}
+#bg-pic img{
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+#main{
+  height:100%;
+  width:100%;
+}
+#main .main-inner{
+  max-width: 1000px;
+  min-width: 800px;
+  height: 100%;
+  background: rgba(255,255,255,.3);
+  position: relative;
+  z-index: 1000;
+}
+#main .panel{
+  width:280px;
+  height:100%;
+  float:left;
+  position: relative;
+}
+#main .panel .header{
+  padding: 18px;
+  position: relative;
+}
+#main .header .avatar{
+  float:left;
+}
+#main .header .avatar img{
+  width:40px;
+  height:40px;
+  border-radius: 2px;
+  display: block;
+  cursor: pointer;
+}
+#main .header .info{
+  font-size: 1.17em;
+  float:left;
+}
+#main .info .nickname{
+  padding:5px 5px;
+  position: relative;
+}
+#main .info .nickname .userName{
+  width:160px;
+  display: inline-block;
+  color:#fff;
+}
+#main .info .dropdown-menu{
+  position: absolute;
+  top:40px;
+  left:30px;
+  background:#fff;
+  width:180px;
+  min-height:100px;
+  border-radius: 5px;
+  padding-bottom:5px;
+  overflow: hidden;
+  z-index: 1003;
+  display: none;
+}
+#main .info .dropdown-menu.show{
+  display: block;
+}
+#main .dropdown-menu a{
+  color: #000;
+  font-size: 14px;
+  padding: 8px;
+  border-bottom: 1px solid #f1f1f1;
+  text-align: left;
+}
+#main i,#chat-pop i{
+  background: url("../img/index_z.png");
+}
+#main .dropdown-menu li i{
+  display: inline-block;
+  vertical-align: middle;
+  width: 34px;
+  height: 34px;
+  margin-right: 8px;
+}
+#main .dropdown-menu .chat i{
+  background-position: -238px -398px;
+}
+#main .dropdown-menu .voice i{
+  background-position: -69px -399px;
+}
+#main .dropdown-menu .voice.isPlay i{
+  background-position: -39px -399px;
+}
+#main .dropdown-menu .option i{
+  background-position: -306px -398px;
+}
+#main .dropdown-menu .exit i{
+  background-position: -102px -398px;
+}
+#main .dropdown-menu a:hover{
+  background: #F5F5F5;
+}
+#main .search{
+  position: relative;
+  width: 244px;
+  margin: 0 auto 6px;
+}
+#main .search .i-search{
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  background: url("../img/index_z.png") -60px -432px;
+  position: absolute;
+  z-index: 101;
+  top: 7px;
+}
+#main .search input{
+  width: 214px;
+  height: 38px;
+  line-height: 32px;
+  border: 0;
+  border-radius: 2px;
+  background-color: rgba(0,0,0,.5);
+  color: #fff;
+  padding-left: 30px;
+  font-size: 12px;
+  outline: none;
+}
+#main .header .info .username{
+  display: inline-block;
+  font-weight: 400;
+  width: 155px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  color: #fff;
+  font-size: 18px;
+  vertical-align: top;
+  line-height: 31px;
+  text-decoration: none;
+  padding-left:5px;
+}
+#main .header .info .header-nav{
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  background:url("../img/index_z.png") no-repeat -434px -398px;
+}
+#main .tab{
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 4px;
+}
+#main .tab .tab_item{
+  float: left;
+  width: 33%;
+  position: relative;
+  text-align: center;
+}
+#main .tab .tab_item a i{
+  display: inline-block;
+  vertical-align: middle;
+  width: 35px;
+  height: 35px;
+}
+#main .tab .tab_item .msg{
+  background-position: -150px -96px;
+}
+#main .tab .tab_item .msg:hover,#main .tab .tab_item .msg.active{
+  background-position: -185px -96px;
+}
+#main .tab .tab_item .game{
+  background-position: -376px -322px;
+}
+#main .tab .tab_item .game:hover,#main .tab .tab_item .game.active{
+  background-position: -304px -281px;
+}
+#main .tab .tab_item .contact{
+  background-position: -220px -96px;
+}
+#main .tab .tab_item .contact:hover,#main .tab .tab_item .contact.active{
+  background-position: -304px -246px;
+}
+#main .view{
+  position: relative;
+  margin-top:5px;
+  width:100%;
+  min-height:75%;
+}
+#main .view>div{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:590px;
+  display: none;
+}
+#main .view>div.view-game{
+  /*background: yellow;*/
+}
+#main .view-contact .contact-item{
+  width:280px;
+}
+#main .view-contact .contact-item,
+#main .view-msg .contact-item,
+.subItem .contact-item {
+  padding:10px 0 10px 15px;
+  background: rgba(0,0,0,.3);
+  cursor: pointer;
+  border:1px solid #333;
+  border-bottom: none;
+  border-right:none;
+}
+#main .view-contact .contact-item:hover,
+#main .view-contact .contact-item.active,
+#main .view-msg .contact-item:hover,
+.subItem .contact-item:hover,
+.subItem .contact-item.active
+{
+  background: rgba(0,0,0,.6);
+}
+#main .view-contact .user-avatar{
+  position: relative;
+}
+#main .view-contact .user-avatar i{
+  width:11px;
+  height:12px;
+  position: absolute;
+  top:0;
+  right:-3px;
+  display: none;
+}
+#main .view-contact .user-avatar i.active{
+  background: url("../img/index_z.png") -411px -304px;
+  display: block;
+}
+#main .view-contact .user-avatar,
+#main .view-msg .user-avatar,
+.subItem .user-avatar
+{
+  float:left;
+  margin-right: 10px;
+  pointer-events: none;
+}
+#main .view-contact .user-avatar img,
+#main .view-msg .user-avatar img,
+.subItem .user-avatar img
+{
+  display: block;
+  width: 45px;
+  height: 45px;
+  border-radius: 2px;
+}
+#main .view-contact .user-name,
+#main .view-msg .user-name,
+.subItem .user-name
+{
+  float: left;
+  overflow: hidden;
+  line-height: 22px;
+  pointer-events: none;
+}
+#main .view-contact .user-sign{
+  color:#ccc;
+}
+#main .view-contact .nickname,
+#main .view-msg .nickname,
+.subItem .nickname
+{
+  color: #fff;
+  font-weight: 400;
+  font-size: 13px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  pointer-events: none;
+}
+#main .skin a{
+  display: inline-block;
+  margin-left:80px;
+}
+#main .skin i{
+  width:24px;
+  height:30px;
+}
+#main .skin i.prev{
+  background-position: -214px -336px;
+}
+#main .skin i.next{
+  background-position: -93px -336px;
+}
+#main .content{
+  float:left;
+  width:720px;
+  height:100%;
+  background: rgba(255,255,255,.4);
+  position: relative;
+}
+#main .content .title-wrap{
+  text-align: center;
+  line-height: 30px;
+  width:100%;
+  height:51px;
+}
+#main .title-wrap .title{
+  position: relative;
+  padding: 10px 0;
+  border-bottom: 1px solid #d6d6d6;
+  background-color: rgba(255,255,255,.5);
+  text-align: center;
+  width:100%;
+  z-index: 1024;
+}
+#main .title-wrap .title .title-info{
+  text-align: center;
+}
+#main .title .chat-name{
+  color: #000;
+  font-weight: 400;
+  font-size: 16px;
+}
+#main .demo{
+  width:100%;
+  height:80%;
+  position: absolute;
+  top:50px;
+  bottom:180px;
+  background-color: rgba(255,255,255,.02);
+  padding-bottom:220px;
+  box-sizing: border-box;
+  transition: all .5s;
+}
+#main .demo .items{
+  margin-bottom:10px;
+}
+#main .demo .demo-inner{
+  width:100%;
+  color:#000;
+  height:136%;
+  overflow-y: scroll;
+  padding-bottom:50px;
+}
+#main .demo .demo-inner .items .timer{
+  text-align: center;
+}
+#main .items .timer .msg-timer{
+  font-size: 14px;
+  padding: 1px 18px;
+  color: #000;
+  border-radius: 2px;
+  margin-top:10px;
+}
+#info-left  .user-lcon{
+  float: left;
+}
+#info-right .user-lcon{
+  float: right;
+}
+ .user-lcon{
+  margin:10px 5px 0 10px;
+}
+ .user-lcon img{
+  width:40px;
+  border-radius:2px;
+}
+#info-left .userMsg{
+  float: left;
+}
+#info-right .userMsg{
+  float: right;
+}
+#info-left .userMsg .username{
+  text-align: left;
+}
+#info-right .userMsg .username{
+  text-align: right;
+}
+ .userMsg .username{
+  font-weight: 400;
+  padding-left: 10px;
+  font-size: 12px;
+  height: 22px;
+  line-height: 24px;
+  color: #4f4f4f;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  margin:0 5px;
+ }
+ #info-left .userMsg .usertxt{
+   background: #4dc71f;
+   color:#000;
+ }
+ #info-right .userMsg .usertxt{
+   background: #fff;
+   color:#000;
+ }
+ .userMsg .usertxt{
+  text-align: left;
+  font-size: 14px;
+  border-radius: 3px;
+  margin: 0 10px;
+  min-height:35px;
+  line-height: 20px;
+  padding:10px;
+  display: inline-block;
+  max-width:400px;
+  white-space:normal;
+}
+.userMsg .usertxt a{
+  display: inline-block;
+}
+.userMsg .usertxt a i{
+  width:75px;
+  height:75px;
+  display: inline-block;
+}
+#main .userMsg .usertxt a i.docx{
+  background-position: -76px -246px;
+}
+#main .userMsg .usertxt a i.ppt{
+  background-position: 0 -246px;
+}
+#main .userMsg .usertxt a i.xlsx{
+  background-position: -151px -246px;
+}
+#main .userMsg .usertxt a i.zip{
+  background-position: -270px -152px;
+}
+#main .userMsg .usertxt a>img{
+  width:150px;
+}
+#main .redact{
+  width:100%;
+  height:180px;
+  position: absolute;
+  bottom:0;
+  left:0;
+  background-color: #fff;
+}
+#main .redact .nav-bar{
+  height: 30px;
+  padding: 5px 17px;
+  position: relative;
+}
+#main .redact .nav-bar>a{
+  width: 30px;
+  height: 30px;
+  background: url("../img/index_z.png");
+  display: inline-block;
+}
+#main .redact .nav-bar>a.face{
+  background-position: -404px -398px;
+}
+/*聊天表情弹出框*/
+#face-pop{
+  width:476px;
+  height:250px;
+  background: #fff;
+  position: absolute;
+  top:-230px;
+  left:8px;
+  border-radius: 5px;
+  opacity: 0;
+  display: none;
+  transition: all .5s;
+}
+#face-pop.show{
+  top:-260px;
+  opacity: 1;
+}
+#face-pop .face-inner{
+  width:100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding:10px 0;
+}
+#face-pop .face-inner .face-pic img{
+  width:62px;
+  margin:0 5px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  border-right: 1px solid #f0f0f0;
+}
+#main .redact .nav-bar>a.file{
+  background-position: -120px -432px;
+  position: relative;
+  overflow: hidden;
+}
+#main .redact .nav-bar input{
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  top: 5px;
+  outline: none;
+}
+#main .redact .text textarea{
+  border:0;
+  outline: 0;
+  width:99%;
+  height:85px;
+  font-size: 18px;
+  text-indent: 2em;
+  font-family: "微软雅黑";
+  overflow: hidden;
+  margin-top:10px;
+}
+#main .redact .action{
+  text-align: right;
+  padding-top:10px;
+}
+#main .redact .action a{
+  display: inline-block;
+  border: 1px solid #c1c1c1;
+  border-radius: 4px;
+  padding: 3px 30px;
+  font-size: 14px;
+  color: #222;
+  margin-right:10px;
+  background: #f8f8f8;
+}
+#main .redact .action a:hover{
+  background:#f1f1f1 ;
+}
+/*个人信息*/
+#detail{
+  padding-top:100px;
+}
+#detail .avatar{
+  margin-bottom: 22px;
+}
+#detail .avatar img{
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 4px
+}
+#detail .detail-nick{
+  text-align: center;
+}
+#detail .detail-nick .d-n-name{
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+#detail .detail-info{
+  margin: 30px auto 40px;
+  text-align: center;
+}
+#detail .detail-info h4{
+  color: #333;
+  margin-right: 5px;
+  line-height: 25px;
+  font-size: 14px;
+}
+#detail .detail-btn,#detail .addFriendD{
+  width: 200px;
+  text-align: center;
+  color: #fff;
+  line-height: 40px;
+  background-color: #42ac3e;
+  font-size: 14px;
+  outline: none;
+  border:none;
+  cursor:pointer;
+}
+/*发起聊天弹出框*/
+#chat-pop{
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.3);
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 1001;
+  display: none;
+}
+#chat-pop .pop-inner{
+  width:480px;
+  height:600px;
+  position: fixed;
+  top:100px;
+  left:0;
+  bottom:0;
+  right:0;
+  background: #fff;
+  border-radius:4px;
+}
+#chat-pop .pop-container{
+  width:100%;
+  height:100%;
+  position: relative;
+}
+#chat-pop .pop-container .choice-title h4{
+  font-size:16px;
+  line-height:50px;
+  text-align: center;
+  background: #f9f9f9;
+}
+#chat-pop .pop-container .search{
+  width:100%;
+  padding:5px 30px;
+  position: relative;
+}
+#chat-pop .search i{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-position: -90px -432px;
+  margin-bottom:3px;
+}
+#chat-pop .select{
+  border: 0;
+  font-size: 16px;
+  width: 350px;
+  line-height: 40px;
+  height: 40px;
+  outline: none;
+}
+#chat-pop .person{
+  width:100%;
+  height:435px;
+  padding:20px 30px;
+}
+#chat-pop .person .personList ul,#chat-pop .person .personList{
+   width:100%;
+ }
+#chat-pop .person .personList li{
+  width:100%;
+  padding:10px 0;
+  cursor: pointer;
+  background: #fff;
+  border-bottom:1px solid #f2f2f2;;
+}
+#chat-pop .person .personList li:after{
+  content:"";
+  display: table;
+  clear: both;
+}
+#chat-pop .personList li.active{
+  background: #efefef;
+}
+#chat-pop .personList li>div{
+  float:left;
+  pointer-events: none;
+}
+#chat-pop  li>div.checked-btn{
+  margin: 10px 10px 0 15px;
+  pointer-events: none;
+}
+#chat-pop  li>div.checked-btn i{
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background-position: -331px -432px;
+}
+#chat-pop  li.active>div.checked-btn i{
+  background-position: -467px -330px;
+}
+#chat-pop  li>div.checked-avatar img{
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 2px
+pointer-events: none;
+}
+#chat-pop li>div.checked-nick h4{
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 40px;
+  padding-left:10px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  pointer-events: none;
+}
+#chat-pop #chatPop-btn{
+  border: 1px solid #c1c1c1;
+  background-color: #c9c9c9;
+  font-size: 14px;
+  width: 190px;
+  line-height: 40px;
+  color: #fff;
+  border-radius: 4px;
+}
+#chat-pop #chatPop-btn.active{
+  background-color: #3caf36
+}
+#chat-pop .chatPop-close{
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: url("../img/index_z.png") -380px -362px;
+  width: 25px;
+  height: 25px;
+}
+/*个人信息弹出框*/
+#userInfo-pop .info-pop{
+  width:220px;
+  height:334px;
+  background: #fff;
+  position: absolute;
+  left:50%;
+  top:60px;
+  margin-left:-460px;
+  z-index: 1004;
+  box-shadow: rgba(0,0,0,.1) 0 5px 10px;
+  border-radius: 4px;
+  transform:scale(.8);
+  display: none;
+  transition:all .2s;
+}
+#userInfo-pop .info-pop.sca{
+  transform: scale(1);
+}
+#userInfo-pop .avatar img{
+  width:220px;
+  height:220px;
+  border-radius: 4px;
+}
+#userInfo-pop .info-pop-txt{
+  padding: 20px;
+  min-height: 74px;
+}
+#userInfo-pop .info-pop-txt .nickname{
+  font-weight: 400;
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 110px;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+#userInfo-pop .info-pop-txt .info-area>div{
+  margin-top:10px;
+}
+#userInfo-pop .info-pop-txt .info-account{
+  padding:2px;
+  display: inline-block;
+}
+#userInfo-pop .info-pop-txt label{
+  float: left;
+  font-size: 12px;
+  color: #888;
+  margin-right: 10px;
+}
+#userInfo-pop .info-pop-txt input{
+  font-size: 12px;
+  color: #888;
+  width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-color:transparent;
+  height:18px;
+  box-sizing: border-box;
+}
+#userInfo-pop .info-pop-txt input.active{
+  border:1px solid #ddd;
+}
+  /*搜索框下拉*/
+.search .subItem{
+  position: absolute;
+  top:40px;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,.4) ;
+  z-index: 1002;
+  display: none;
+}
+/*添加好友*/
+#friend-pop .friend{
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #d6d6d6;
+  box-shadow: 2px 3px 10px rgba(0,0,0,.1);
+  position: absolute;
+  z-index: 1004;
+}
+#friend-pop .friend li a{
+  display: block;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  padding: 8px;
+  border-bottom: 1px solid #f1f1f1;
+  text-align: left;
+}
+#friend-pop .friend li:hover{
+  background: #efefef;
+}
+/*添加删除好友弹出框*/
+#aboutFriend{
+  height:100%;
+  width:100%;
+  position: absolute;
+  top:0;
+  left:0;
+  background: rgba(0,0,0,.5);
+  z-index: 1003;
+  display: none;
+}
+#aboutFriend .main{
+  width:230px;
+  height:200px;
+  background: #ddd;
+  position: absolute;
+  border-radius: 5px;
+  top:200px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index: 1004;
+}
+#aboutFriend .operateTitle{
+  font-size: 20px;
+  color:#666;
+  text-align: center;
+  padding:5px 10px;
+  border-bottom: 1px solid #ccc;
+}
+#aboutFriend .operateInfo{
+  font-size: 16px;
+  color:#999;
+  margin:15px 10px;
+}
+#aboutFriend .operateInfo .nickname{
+  color:#000;
+}
+#aboutFriend .remark{
+  font-size: 16px;
+  color:#999;
+  padding:5px 10px;
+  line-height: 22px;
+}
+#aboutFriend .remark .remarks{
+  border:1px solid #ddd;
+  height:20px;
+  border-radius:5px;
+  text-indent: 1em;
+  width:145px;
+}
+#aboutFriend .confirm{
+  padding:5px 25px 10px 0;
+  text-align: right;
+}
+#aboutFriend .confirm button{
+  width:60px;
+  height:30px;
+  border: none;
+  border-radius: 5px;
+}
+#aboutFriend .confirm button.agree{
+  color:#fff;
+  background: #179b16;
+}
+#aboutFriend .confirm button.cancel{
+  color:#fff;
+  background: #fea701;
+}
+/*文件缓存区*/
+#dataBuffer{
+  display: none;
+}
+/*图片查看界面*/
+#picCheck{
+  width:100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left:0;
+  background: rgba(0,0,0,.5);
+  z-index: 1004;
+  display: none;
+}
+#picCheck>.main{
+  position: fixed;
+  top:100px;
+  left: 50%;
+  transform: translate(-50%,0);
+  max-width: 800px;
+  max-height: 600px;
+}
+#picCheck>.main>.container{
+  position: relative;
+  overflow: hidden;
+}
+#picCheck>.main .pic>img{
+  max-width: 800px;
+}
+#picCheck>.main .picClose{
+  width:53px;
+  height:56px;
+  background: url("../img/index_z.png") -423px -164px;
+  position: absolute;
+  top:-10px;
+  right:-10px;
+  cursor: pointer;
+}
+/*滚动条*/
+.mainBox,.mainBox2{
+  width:410px;
+  height:315px;
+  position:relative;
+  overflow:hidden;
+}
+.content-scroll,.content-scroll2{
+  position:absolute;
+  left:0; top:0;
+  overflow: visible;
+}
+.scrollDiv,.scrollDiv2{
+  width:5px;
+  position:absolute;
+  top:0;
+  background-color:#444;
+  border-radius:25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.blank .panel{
+  background:rgba(0,0,0,.3);
+}
+.blue .panel{
+  background:blue;
+}
