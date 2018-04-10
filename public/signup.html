@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="css/init.css"/>
+    <link rel="stylesheet" href="css/signup.css"/>
+</head>
+<body>
+    <div id="inner">
+        <div class="logo">
+            <img src="img/baozou.png">
+        </div>
+        <div class="form">
+            <div class="main">
+                <form>
+                    <div class="form-group">
+                        <label for="nickName" class="label">昵称</label>
+                        <input type="text" id="nickName" placeholder="请输入昵称">
+                        <div class="vail"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="userName" class="label">账号</label>
+                        <input type="text" id="userName" placeholder="须由数字和字母组成">
+                        <div class="vail"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="userPwd" class="label">密码</label>
+                        <input type="password" id="userPwd" placeholder="长度不少于8位">
+                        <div class="vail"></div>
+                    </div>
+                    <div >
+                        <label class="label">头像</label>
+                        <div class="lcon">
+                            <ul class="float-clear">
+                                <li class="active"><img src="img/lcon1.jpg" data-role="lcon1"></li>
+                                <li><img src="img/lcon2.jpg" data-role="lcon2"></li>
+                                <li><img src="img/lcon3.jpg" data-role="lcon3"></li>
+                                <li><img src="img/lcon4.jpg" data-role="lcon4"></li>
+                                <li><img src="img/lcon5.jpg" data-role="lcon5"></li>
+                                <li><img src="img/lcon6.jpg" data-role="lcon6"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                       <button type="button" id="submit">注册</button>
+                    </div>
+                    <div class="direction">
+                        <p>有账号？<a href="login.html">去登录</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/signup.js"></script>
+</body>
+</html>

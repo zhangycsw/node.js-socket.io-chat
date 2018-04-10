@@ -1,1 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/init.css"/>
+    <link rel="stylesheet" href="css/bzchat.css"/>
+    <script src="/socket.io/socket.io.js"></script>
+    <title></title>
+</head>
+<body class="blank">
+    <!--背景图片-->
+    <div id="bg-pic">
+        <img src="img/2.jpg">
+    </div>
+    <div id="main">
+        <div class="main-inner">
+            <!--左边面板-->
+            <div class="panel">
+                <div class="header float-clear">
+                    <div class="avatar">
+                        <img src="">
+                    </div>
+                    <div class="info">
+                        <div class="nickname">
+                            <span class="userName"></span>
+                            <a href="javascript:;" class="header-nav"></a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;" class="chat">
+                                            <i class="chat"></i>
+                                            发起群聊
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="option">
+                                            <i ></i>
+                                            意见反馈
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="voice">
+                                            <i ></i>
+                                            关闭声音
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;"  class="exit">
+                                            <i></i>
+                                            退出程序
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search">
+                    <i class="i-search"></i>
+                    <input type="text" class="select">
+                    <div class="subItem">
+                        <!--<div class="contact-item float-clear">-->
+                            <!--<div class="user-avatar">-->
+                                <!--<img src="img/lcon1.jpg">-->
+                            <!--</div>-->
+                            <!--<div class="user-name">-->
+                                <!--<h4 class="nickname">-->
+                                    <!--web1704-->
+                                <!--</h4>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="tab">
+                    <div class="tab_item">
+                        <a href="javascript:;" title="信息"><i class="msg "></i></a>
+                    </div>
+                    <div class="tab_item">
+                        <a href="javascript:;" title="游戏"><i class="game"></i></a>
+                    </div>
+                    <div class="tab_item">
+                        <a href="javascript:;" title="联系人"><i class="contact active"></i></a>
+                    </div>
+                </div>
+                <div class="view" >
+                    <div class="view-msg" >
+                        <!--<div class="contact-item float-clear">-->
+                            <!--<div class="user-avatar">-->
+                                <!--<img src="img/lcon1.jpg">-->
+                            <!--</div>-->
+                            <!--<div class="user-name">-->
+                                <!--<h4 class="nickname">-->
+                                    <!--web1704-->
+                                <!--</h4>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="view-game">
 
+                    </div>
+                    <div class="view-contact mainBox" style="display: block">
+                        <div class="contact-items content-scroll">
+                            <!--<div class="contact-item float-clear">-->
+                            <!--<div class="user-avatar">-->
+                            <!--<img src="img/lcon1.jpg">-->
+                            <!--</div>-->
+                            <!--<div class="user-name">-->
+                            <!--<h4 class="nickname">-->
+                            <!--测试信息-->
+                            <!--</h4>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="skin">
+                    <a href="javascript:;"><i class="prev"></i></a>
+                    <a href="javascript:;"><i class="next"></i></a>
+                </div>
+            </div>
+            <!--右边消息区-->
+            <div class="content">
+                <div class="title-wrap">
+                    <div class="title">
+                        <div class="title-info">
+                            <p class="chat-name">未选择聊天<span class="num"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo">
+                    <div class="demo-inner float-clear">
+                        <!--<div class="items float-clear">-->
+                            <!--<div class="timer">-->
+                                <!--<div class="msg-timer">-->
+                                    <!--11:20-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="userInfo">-->
+                                <!--<div id="info-left">-->
+                                    <!--<div class="user-lcon">-->
+                                        <!--<img src="img/Icon1.jpg">-->
+                                    <!--</div>-->
+                                    <!--<div class="userMsg">-->
+                                        <!--<div class="username">-->
+                                            <!--hfdkfd-->
+                                        <!--</div>-->
+                                        <!--<div class="usertxt">-->
+<!--sfdsdssfsfsdfs-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="items float-clear">-->
+                            <!--<div class="timer">-->
+                                <!--<div class="msg-timer">-->
+                                    <!--11:20-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="userInfo">-->
+                                <!--<div id="info-right">-->
+                                    <!--<div class="user-lcon">-->
+                                        <!--<img src="img/Icon1.jpg">-->
+                                    <!--</div>-->
+                                    <!--<div class="userMsg">-->
+                                        <!--<div class="username">-->
+                                            <!--hfdkfd-->
+                                        <!--</div>-->
+                                        <!--<div class="usertxt">-->
+                                            <!--fdfdsfdfd-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div id="detail">-->
+                            <!--<div class="avatar">-->
+                                <!--<img src="img/lcon1.jpg">-->
+                            <!--</div>-->
+                            <!--<div class="detail-nick">-->
+                                <!--<h4 class="d-n-name">爱自己</h4>-->
+                            <!--</div>-->
+                            <!--<div class="detail-info">-->
+                                <!--<h4 class="account">mayun@163.com</h4>-->
+                                <!--<h4 class="location">浙江 杭州</h4>-->
+                            <!--</div>-->
+                            <!--<div class="text-center">-->
+                                <!--<button type="button" class="detail-btn">发消息</button>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="redact">
+                    <div class="nav-bar">
+                        <a href="javascript:;" class="face">
+                        </a>
+                        <div id="face-pop">
+                            <div class="face-inner">
+                                <div class="face-pic">
+                                    <img src="img/emoji/1.gif" class="emoji/1">
+                                    <img src="img/emoji/2.gif" class="emoji/2">
+                                    <img src="img/emoji/3.gif" class="emoji/3">
+                                    <img src="img/emoji/4.gif" class="emoji/4">
+                                    <img src="img/emoji/5.gif" class="emoji/5">
+                                    <img src="img/emoji/6.gif" class="emoji/6">
+                                    <img src="img/emoji/7.gif" class="emoji/7">
+                                    <img src="img/emoji/8.gif" class="emoji/8">
+                                    <img src="img/emoji/9.gif" class="emoji/9">
+                                    <img src="img/emoji/10.gif" class="emoji/10">
+                                    <img src="img/emoji/11.gif" class="emoji/11">
+                                    <img src="img/emoji/12.gif" class="emoji/12">
+                                    <img src="img/emoji/13.gif" class="emoji/13">
+                                    <img src="img/emoji/14.gif" class="emoji/14">
+                                    <img src="img/emoji/15.gif" class="emoji/15">
+                                    <img src="img/emoji/16.gif" class="emoji/16">
+                                    <img src="img/emoji/17.gif" class="emoji/17">
+                                    <img src="img/emoji/18.gif" class="emoji/18">
+                                    <img src="img/emoji/19.gif" class="emoji/19">
+                                    <img src="img/emoji/20.gif" class="emoji/20">
+                                    <img src="img/emoji/21.gif" class="emoji/21">
+                                    <img src="img/emoji/22.gif" class="emoji/22">
+                                    <img src="img/emoji/23.gif" class="emoji/23">
+                                    <img src="img/emoji/24.gif" class="emoji/24">
+                                    <img src="img/emoji/25.gif" class="emoji/25">
+                                    <img src="img/emoji/26.gif" class="emoji/26">
+                                    <img src="img/emoji/27.gif" class="emoji/27">
+                                    <img src="img/emoji/28.gif" class="emoji/28">
+                                    <img src="img/emoji/29.gif" class="emoji/29">
+                                    <img src="img/emoji/30.gif" class="emoji/30">
+                                </div>
+                            </div>
+                        </div>
+                        <a href="javascript:;" class="file">
+                            <input type="file" multiple="multiple" id="file">
+                        </a>
+                    </div>
+                    <div class="text">
+                        <textarea id="userTxt" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="action">
+                        <span>按enter键发送</span>
+                        <a href="javascript:;" id="send">发送</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div >
+            <audio src="img/msgvovice.mp3" id="audio"></audio>
+        </div>
+    </div>
+    <!--发起聊天-->
+    <div id="chat-pop">
+        <div class="pop-inner">
+            <div class="pop-container">
+                <div class="choice-title">
+                    <h4>发起聊天</h4>
+                </div>
+                <div class="search">
+                    <i></i>
+                    <input type="text" placeholder="搜索" id="selector" class="select">
+                    <div class="subItem">
+                        <!--<div class="contact-item float-clear">-->
+                            <!--<div class="user-avatar">-->
+                                <!--<img src="img/lcon1.jpg">-->
+                            <!--</div>-->
+                            <!--<div class="user-name">-->
+                                <!--<h4 class="nickname">-->
+                                    <!--web1704-->
+                                <!--</h4>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="person" style="overflow-y: scroll">
+                        <ul class="personList">
+                            <!--<li class="active">-->
+                            <!--<div class="checked-btn">-->
+                            <!--<i></i>-->
+                            <!--</div>-->
+                            <!--<div class="checked-avatar">-->
+                            <!--<img src="img/lcon4.jpg">-->
+                            <!--</div>-->
+                            <!--<div class="checked-nick">-->
+                            <!--<h4>测试信息</h4>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                        </ul>
+                </div>
+                <div class="text-center">
+                    <button type="button" id="chatPop-btn">确认</button>
+                </div>
+                <a href="javascript:;" class="chatPop-close"></a>
+            </div>
+        </div>
+    </div>
+    <!--个人信息-->
+    <div id="userInfo-pop">
+        <div class="info-pop">
+            <div class="avatar">
+                <img src="img/lcon1.jpg" class="emoji1">
+            </div>
+            <div class="info-pop-txt">
+                <div class="nickname">landluck</div>
+                <div class="info-area">
+                    <div class="info-sign">
+                        <label for="signature">签名:</label>
+                        <input type="text" id="signature">
+                    </div>
+                    <div class="account">
+                        <label>账号:</label>
+                        <span class="info-account">测试信息</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 添加删除好友 -->
+    <div id="friend-pop">
+        <div class="friend">
+            <ul>
+                <li><a href="javascript:;" id="addFriend">添加好友</a></li>
+                <li><a href="javascript:;" id="checkUserDetail">查看详细信息</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--添加删除好友弹出框-->
+    <div id="aboutFriend">
+        <div class="main">
+            <div class="operateTitle">
+                删除好友
+            </div>
+            <div class="operateInfo">
+                您确定要删除好友 <span class="nickname">今冬</span> 吗?
+            </div>
+            <div class="remark">
+                备注：<input class="remarks" type="text">
+            </div>
+            <div class="confirm">
+                <button class="agree" type="button">确认</button>
+                <button class="cancel" type="button">取消</button>
+            </div>
+        </div>
+    </div>
+    <div id="picCheck">
+        <div class="main">
+           <div class="container">
+               <div class="pic">
+                   <img src="">
+               </div>
+               <div class="picClose"></div>
+           </div>
+        </div>
+    </div>
+    <div id="dataBuffer">
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/srcoll.js"></script>
+</body>
+</html>
